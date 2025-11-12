@@ -13,103 +13,32 @@ namespace CasaInteligente
 {
     public partial class CasaInteligente : Form
     {
-        SerialPort puerto;
+        private Arduino arduino;
         public CasaInteligente()
         {
             InitializeComponent();
-            puerto = new SerialPort
-            {
-                PortName = "COM16",      // 👈 Cambia esto por tu puerto real
-                BaudRate = 9600,
-                Parity = Parity.None,
-                DataBits = 8,
-                StopBits = StopBits.One,
-                Handshake = Handshake.None,
-                ReadTimeout = 500,
-                NewLine = "\n"
-            };
-
-
-            // Suscribirse al evento cuando llegan datos
-            puerto.DataReceived += Puerto_DataReceived;
-
-            try
-            {
-                puerto.Open();
-                Console.WriteLine("Conectado al Arduino.\n");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectar con Arduino: " + ex.Message);
-            }
-
-
+            arduino = new Arduino("COM7");
+            arduino.DatosRecibidos += ActualizarUI;
+            arduino.Abrir();
         }
 
-
-        public void humedad() {
-            try
-            {
-                puerto.Open();
-                Console.WriteLine("Conectado al Arduino.\n");
-
-                while (true)
-                {
-                    string linea = puerto.ReadLine();
-                    string[] datos = linea.Trim().Split(';');
-
-                    if (datos.Length == 1)
-                    {
-                        int humedad = int.Parse(datos[0]);
-
-                        this.lblHumedad.Text = humedad.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                if (puerto.IsOpen)
-                    puerto.Close();
-            }
-        }
-
-        private void Puerto_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void ActualizarUI(Datos datos)
         {
-            try
+            // Se ejecuta desde el hilo del puerto serie, usar BeginInvoke para la UI
+            if (InvokeRequired)
             {
-                string linea = puerto.ReadLine();
-                string[] datos = linea.Trim().Split(';');
+                this.BeginInvoke(new Action(() => ActualizarUI(datos)));
+                return;
+            }
 
-                if (datos.Length >= 1)
-                {
-                    int humedad = int.Parse(datos[0]);
-
-                    // ⚠️ Actualiza el control en el hilo principal
-                    this.Invoke(new Action(() =>
-                    {
-                        lblHumedad.Text = humedad.ToString();
-                    }));
-                }
-            }
-            catch (TimeoutException)
-            {
-                // Ignorar si no llegan datos a tiempo
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al leer datos: " + ex.Message);
-            }
+            lblEstadoBomba.Text = datos.estadoBomba;
+            lblHumedad.Text = datos.humedad;
+            lblTemp.Text = datos.temperatura;
+            //lblHumedadCuarto.Text = $"Humedad Cuarto: {datos.humedadCuarto}";
+            //lblBomba.Text = $"Estado Bomba: {datos.estadoBomba}";
+            //lblVentilador.Text = $"Estado Ventilador: {datos.estadoVentilador}";
         }
 
-        private void CasaInteligente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (puerto != null && puerto.IsOpen)
-                puerto.Close();
-        }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
@@ -141,8 +70,7 @@ namespace CasaInteligente
 
         private void CasaInteligente_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            if (puerto != null && puerto.IsOpen)
-                puerto.Close();
+            arduino.Cerrar();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -166,6 +94,11 @@ namespace CasaInteligente
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void temperatura_Click(object sender, EventArgs e)
         {
 
         }
