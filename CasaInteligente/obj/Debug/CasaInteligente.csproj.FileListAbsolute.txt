@@ -1,0 +1,10 @@
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\bin\Debug\CasaInteligente.exe.config
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\bin\Debug\CasaInteligente.exe
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\bin\Debug\CasaInteligente.pdb
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.csproj.AssemblyReference.cache
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.CasaInteligente.resources
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.Properties.Resources.resources
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.csproj.GenerateResource.cache
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.csproj.CoreCompileInputs.cache
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.exe
+C:\Users\Deyve\Documents\UES 5TO SEMESTRE\Ingenieria en software\CasaInteligente\CasaInteligente\obj\Debug\CasaInteligente.pdb
