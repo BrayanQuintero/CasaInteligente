@@ -48,6 +48,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.temperatura = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblInformaciónHumedad = new System.Windows.Forms.Label();
@@ -57,14 +59,14 @@
             this.lblHumedad = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.temperatura = new System.Windows.Forms.Label();
-            this.lblTemp = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Calle.SuspendLayout();
             this.DSemaforo.SuspendLayout();
             this.DFondo.SuspendLayout();
             this.ISemaforo.SuspendLayout();
             this.IFondo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -191,7 +193,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.97891F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.02109F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 293F));
             this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
@@ -210,10 +212,11 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.Controls.Add(this.label2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(592, 192);
+            this.panel7.Location = new System.Drawing.Point(591, 192);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(287, 183);
+            this.panel7.Size = new System.Drawing.Size(288, 183);
             this.panel7.TabIndex = 1;
             // 
             // panel6
@@ -221,7 +224,7 @@
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
             this.panel6.Controls.Add(this.label10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(286, 192);
+            this.panel6.Location = new System.Drawing.Point(285, 192);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(300, 183);
             this.panel6.TabIndex = 1;
@@ -244,7 +247,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 192);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(277, 183);
+            this.panel5.Size = new System.Drawing.Size(276, 183);
             this.panel5.TabIndex = 1;
             // 
             // label9
@@ -262,9 +265,9 @@
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Controls.Add(this.label8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(592, 3);
+            this.panel4.Location = new System.Drawing.Point(591, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(287, 183);
+            this.panel4.Size = new System.Drawing.Size(288, 183);
             this.panel4.TabIndex = 1;
             // 
             // label8
@@ -285,10 +288,30 @@
             this.panel3.Controls.Add(this.temperatura);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(286, 3);
+            this.panel3.Location = new System.Drawing.Point(285, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 183);
             this.panel3.TabIndex = 1;
+            // 
+            // lblTemp
+            // 
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemp.Location = new System.Drawing.Point(158, 84);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(0, 21);
+            this.lblTemp.TabIndex = 7;
+            // 
+            // temperatura
+            // 
+            this.temperatura.AutoSize = true;
+            this.temperatura.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatura.Location = new System.Drawing.Point(21, 84);
+            this.temperatura.Name = "temperatura";
+            this.temperatura.Size = new System.Drawing.Size(131, 21);
+            this.temperatura.TabIndex = 6;
+            this.temperatura.Text = "Temperatura: ";
+            this.temperatura.Click += new System.EventHandler(this.temperatura_Click);
             // 
             // label7
             // 
@@ -313,7 +336,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(277, 183);
+            this.panel2.Size = new System.Drawing.Size(276, 183);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -391,25 +414,15 @@
             this.panel1.Size = new System.Drawing.Size(882, 378);
             this.panel1.TabIndex = 2;
             // 
-            // temperatura
+            // label2
             // 
-            this.temperatura.AutoSize = true;
-            this.temperatura.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temperatura.Location = new System.Drawing.Point(21, 84);
-            this.temperatura.Name = "temperatura";
-            this.temperatura.Size = new System.Drawing.Size(131, 21);
-            this.temperatura.TabIndex = 6;
-            this.temperatura.Text = "Temperatura: ";
-            this.temperatura.Click += new System.EventHandler(this.temperatura_Click);
-            // 
-            // lblTemp
-            // 
-            this.lblTemp.AutoSize = true;
-            this.lblTemp.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTemp.Location = new System.Drawing.Point(158, 84);
-            this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(0, 21);
-            this.lblTemp.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Hora:";
             // 
             // CasaInteligente
             // 
@@ -427,6 +440,8 @@
             this.ISemaforo.ResumeLayout(false);
             this.IFondo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -475,6 +490,7 @@
         private System.Windows.Forms.Label lblInformaciónHumedad;
         private System.Windows.Forms.Label temperatura;
         private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Label label2;
     }
 }
 
