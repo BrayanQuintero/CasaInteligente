@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CasaInteligente"
+    "\\CasaInteligente",
+    "\\CasaInteligente\\obj"
   ],
+  "SelectedNode": "\\CasaInteligente.sln",
   "PreviewInSolutionExplorer": false
 }
