@@ -14,12 +14,22 @@ namespace CasaInteligente
     public partial class CasaInteligente : Form
     {
         private Arduino arduino;
+
+        private Color verdeON = Color.Green;
+        private Color verdeOFF = Color.FromArgb(0, 64, 0);
+        private Color amarilloON = Color.Yellow;
+        private Color amarilloOFF = Color.Olive;
+        private Color rojoON = Color.Red;
+        private Color rojoOFF = Color.Maroon;
         public CasaInteligente()
         {
             InitializeComponent();
             arduino = new Arduino("COM7");
             arduino.DatosRecibidos += ActualizarUI;
             arduino.Abrir();
+            timer.Interval = 1000; // 1000 ms = 1 segundo (la actualización cada segundo)
+            timer.Tick += Timer_Tick; // Define el evento para el temporizador
+            timer.Start(); // Inicia el temporizador
         }
 
         private void ActualizarUI(Datos datos)
@@ -31,76 +41,45 @@ namespace CasaInteligente
                 return;
             }
 
+            lblHumedadPatio.Text = datos.humedadPatio;
             lblEstadoBomba.Text = datos.estadoBomba;
-            lblHumedad.Text = datos.humedad;
-            //lblTemp.Text = datos.temperatura;
-            //lblHumedadCuarto.Text = $"Humedad Cuarto: {datos.humedadCuarto}";
-            //lblBomba.Text = $"Estado Bomba: {datos.estadoBomba}";
-            //lblVentilador.Text = $"Estado Ventilador: {datos.estadoVentilador}";
+
+            lblTemperatura.Text = datos.temperatura;
+            lblHumedadCuarto.Text = datos.humedadCuarto;
+            lblEstadoAbanico.Text = datos.estadoAbanico;
+            
+            lblEstadoPuerta.Text = datos.estadoPuerta;
+            lblIntentos.Text = datos.intentos;
+
+            lblModoLed.Text = datos.modoLed;
+            lblEstadoLed.Text = datos.estadoLed;
+
+            lblEstadoAlarma.Text = datos.estadoAlarma;
+            lblDistancia.Text = datos.distancia;
+            lblDetectando.Text = datos.detectando;
+
+            semaforo(datos);
         }
 
+        public void semaforo(Datos datos) {
+            IRojo.BackColor = datos.iRojo.Equals("ON") ? rojoON : rojoOFF;
+            IAmarillo.BackColor = datos.iAmarillo.Equals("ON") ? amarilloON : amarilloOFF;
+            IVerde.BackColor = datos.iVerde.Equals("ON") ? verdeON : verdeOFF;
 
-        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
-        {
+            DRojo.BackColor = datos.dRojo.Equals("ON") ? rojoON : rojoOFF;
+            DAmarillo.BackColor = datos.dAmarillo.Equals("ON") ? amarilloON : amarilloOFF;
+            DVerde.BackColor = datos.dVerde.Equals("ON") ? verdeON : verdeOFF;
 
-        }
-
-        private void ConnectToArduino(string portName)
-        {
-        }
-        private void IRojo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void DRojo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //humedad();
         }
 
         private void CasaInteligente_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             arduino.Cerrar();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblRiego_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
+            // Muestra la hora actual en el label
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss"); // 24 horas con minutos y segundos
         }
 
         private void CasaInteligente_Load(object sender, EventArgs e)
