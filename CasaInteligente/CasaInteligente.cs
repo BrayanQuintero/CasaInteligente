@@ -33,7 +33,7 @@ namespace CasaInteligente
 
             lblEstadoBomba.Text = datos.estadoBomba;
             lblHumedad.Text = datos.humedad;
-            lblTemp.Text = datos.temperatura;
+            //lblTemp.Text = datos.temperatura;
             //lblHumedadCuarto.Text = $"Humedad Cuarto: {datos.humedadCuarto}";
             //lblBomba.Text = $"Estado Bomba: {datos.estadoBomba}";
             //lblVentilador.Text = $"Estado Ventilador: {datos.estadoVentilador}";
@@ -98,7 +98,12 @@ namespace CasaInteligente
 
         }
 
-        private void temperatura_Click(object sender, EventArgs e)
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CasaInteligente_Load(object sender, EventArgs e)
         {
 
         }
