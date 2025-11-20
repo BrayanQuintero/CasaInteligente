@@ -47,6 +47,7 @@
             this.IVerde = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblDistancia = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblIntentos = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -87,7 +87,6 @@
             this.lblHumedadPatio = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.Calle.SuspendLayout();
             this.DSemaforo.SuspendLayout();
@@ -266,7 +265,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.97891F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.02109F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
             this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
@@ -287,10 +286,19 @@
             this.panel7.BackColor = System.Drawing.Color.RosyBrown;
             this.panel7.Controls.Add(this.lblHora);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(588, 192);
+            this.panel7.Location = new System.Drawing.Point(586, 192);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(291, 183);
+            this.panel7.Size = new System.Drawing.Size(293, 183);
             this.panel7.TabIndex = 1;
+            // 
+            // lblHora
+            // 
+            this.lblHora.Font = new System.Drawing.Font("Modern No. 20", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(0, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(291, 183);
+            this.lblHora.TabIndex = 8;
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -304,9 +312,9 @@
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(284, 192);
+            this.panel6.Location = new System.Drawing.Point(283, 192);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(298, 183);
+            this.panel6.Size = new System.Drawing.Size(297, 183);
             this.panel6.TabIndex = 1;
             // 
             // lblDistancia
@@ -315,9 +323,10 @@
             this.lblDistancia.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistancia.Location = new System.Drawing.Point(162, 84);
             this.lblDistancia.Name = "lblDistancia";
-            this.lblDistancia.Size = new System.Drawing.Size(87, 34);
+            this.lblDistancia.Size = new System.Drawing.Size(102, 34);
             this.lblDistancia.TabIndex = 15;
             this.lblDistancia.Text = " ";
+            this.lblDistancia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
@@ -333,7 +342,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(54, 159);
+            this.label15.Location = new System.Drawing.Point(82, 159);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(135, 14);
             this.label15.TabIndex = 13;
@@ -348,6 +357,7 @@
             this.lblDetectando.Size = new System.Drawing.Size(192, 34);
             this.lblDetectando.TabIndex = 11;
             this.lblDetectando.Text = " ";
+            this.lblDetectando.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -364,9 +374,10 @@
             this.lblEstadoAlarma.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoAlarma.Location = new System.Drawing.Point(162, 39);
             this.lblEstadoAlarma.Name = "lblEstadoAlarma";
-            this.lblEstadoAlarma.Size = new System.Drawing.Size(87, 34);
+            this.lblEstadoAlarma.Size = new System.Drawing.Size(102, 34);
             this.lblEstadoAlarma.TabIndex = 9;
             this.lblEstadoAlarma.Text = " ";
+            this.lblEstadoAlarma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label11
             // 
@@ -399,7 +410,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 192);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(275, 183);
+            this.panel5.Size = new System.Drawing.Size(274, 183);
             this.panel5.TabIndex = 1;
             // 
             // lblEstadoLed
@@ -408,9 +419,10 @@
             this.lblEstadoLed.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoLed.Location = new System.Drawing.Point(133, 113);
             this.lblEstadoLed.Name = "lblEstadoLed";
-            this.lblEstadoLed.Size = new System.Drawing.Size(93, 34);
+            this.lblEstadoLed.Size = new System.Drawing.Size(120, 34);
             this.lblEstadoLed.TabIndex = 13;
             this.lblEstadoLed.Text = " ";
+            this.lblEstadoLed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblModoLed
             // 
@@ -418,9 +430,10 @@
             this.lblModoLed.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModoLed.Location = new System.Drawing.Point(133, 51);
             this.lblModoLed.Name = "lblModoLed";
-            this.lblModoLed.Size = new System.Drawing.Size(93, 34);
+            this.lblModoLed.Size = new System.Drawing.Size(120, 34);
             this.lblModoLed.TabIndex = 12;
             this.lblModoLed.Text = " ";
+            this.lblModoLed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label25
             // 
@@ -455,7 +468,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.lblIntentos);
             this.panel4.Controls.Add(this.label20);
@@ -463,20 +475,10 @@
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(588, 3);
+            this.panel4.Location = new System.Drawing.Point(586, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(291, 183);
+            this.panel4.Size = new System.Drawing.Size(293, 183);
             this.panel4.TabIndex = 1;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(147, 147);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(111, 14);
-            this.label23.TabIndex = 15;
-            this.label23.Text = "Correcta/Incorrecta";
             // 
             // label22
             // 
@@ -497,6 +499,7 @@
             this.lblIntentos.Size = new System.Drawing.Size(114, 34);
             this.lblIntentos.TabIndex = 10;
             this.lblIntentos.Text = " ";
+            this.lblIntentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label20
             // 
@@ -504,9 +507,9 @@
             this.label20.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(6, 116);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 23);
+            this.label20.Size = new System.Drawing.Size(80, 23);
             this.label20.TabIndex = 9;
-            this.label20.Text = "Intentos:";
+            this.label20.Text = "Codigo:";
             // 
             // lblEstadoPuerta
             // 
@@ -517,6 +520,7 @@
             this.lblEstadoPuerta.Size = new System.Drawing.Size(114, 34);
             this.lblEstadoPuerta.TabIndex = 8;
             this.lblEstadoPuerta.Text = " ";
+            this.lblEstadoPuerta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -550,9 +554,9 @@
             this.panel3.Controls.Add(this.lblTemeratura);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(284, 3);
+            this.panel3.Location = new System.Drawing.Point(283, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(298, 183);
+            this.panel3.Size = new System.Drawing.Size(297, 183);
             this.panel3.TabIndex = 1;
             // 
             // label6
@@ -574,6 +578,7 @@
             this.lblEstadoAbanico.Size = new System.Drawing.Size(93, 34);
             this.lblEstadoAbanico.TabIndex = 11;
             this.lblEstadoAbanico.Text = " ";
+            this.lblEstadoAbanico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -594,6 +599,7 @@
             this.lblHumedadCuarto.Size = new System.Drawing.Size(114, 34);
             this.lblHumedadCuarto.TabIndex = 9;
             this.lblHumedadCuarto.Text = " ";
+            this.lblHumedadCuarto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -614,6 +620,7 @@
             this.lblTemperatura.Size = new System.Drawing.Size(114, 34);
             this.lblTemperatura.TabIndex = 7;
             this.lblTemperatura.Text = " ";
+            this.lblTemperatura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTemeratura
             // 
@@ -647,7 +654,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(275, 183);
+            this.panel2.Size = new System.Drawing.Size(274, 183);
             this.panel2.TabIndex = 0;
             // 
             // lblInformaciónHumedad
@@ -680,6 +687,7 @@
             this.lblEstadoBomba.Size = new System.Drawing.Size(87, 34);
             this.lblEstadoBomba.TabIndex = 3;
             this.lblEstadoBomba.Text = " ";
+            this.lblEstadoBomba.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -700,6 +708,7 @@
             this.lblHumedadPatio.Size = new System.Drawing.Size(87, 34);
             this.lblHumedadPatio.TabIndex = 1;
             this.lblHumedadPatio.Text = " ";
+            this.lblHumedadPatio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -722,16 +731,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 378);
             this.panel1.TabIndex = 2;
-            // 
-            // lblHora
-            // 
-            this.lblHora.Font = new System.Drawing.Font("Modern No. 20", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(0, 0);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(291, 183);
-            this.lblHora.TabIndex = 8;
-            this.lblHora.Text = "01:52";
-            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CasaInteligente
             // 
@@ -816,7 +815,6 @@
         private System.Windows.Forms.Label lblModoLed;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblIntentos;
         private System.Windows.Forms.Label label20;

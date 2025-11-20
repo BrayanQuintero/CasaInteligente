@@ -14,7 +14,7 @@ namespace CasaInteligente
         public string humedadCuarto { get; set; }
         public string estadoAbanico { get; set; }
         public string estadoPuerta { get; set; }
-        public string intentos { get; set; }
+        public string entrada { get; set; }
         public string modoLed { get; set; }
         public string estadoLed { get; set; }
         public string estadoAlarma { get; set; }

@@ -24,7 +24,7 @@ namespace CasaInteligente
         public CasaInteligente()
         {
             InitializeComponent();
-            arduino = new Arduino("COM7");
+            arduino = new Arduino("COM20");
             arduino.DatosRecibidos += ActualizarUI;
             arduino.Abrir();
             timer.Interval = 1000; // 1000 ms = 1 segundo (la actualización cada segundo)
@@ -49,7 +49,7 @@ namespace CasaInteligente
             lblEstadoAbanico.Text = datos.estadoAbanico;
             
             lblEstadoPuerta.Text = datos.estadoPuerta;
-            lblIntentos.Text = datos.intentos;
+            lblIntentos.Text = datos.entrada;
 
             lblModoLed.Text = datos.modoLed;
             lblEstadoLed.Text = datos.estadoLed;
@@ -62,7 +62,7 @@ namespace CasaInteligente
         }
 
         public void semaforo(Datos datos) {
-            IRojo.BackColor = datos.iRojo.Equals("ON") ? rojoON : rojoOFF;
+            IRojo.BackColor = "ON".Equals(datos.iRojo) ? rojoON : rojoOFF;
             IAmarillo.BackColor = datos.iAmarillo.Equals("ON") ? amarilloON : amarilloOFF;
             IVerde.BackColor = datos.iVerde.Equals("ON") ? verdeON : verdeOFF;
 
