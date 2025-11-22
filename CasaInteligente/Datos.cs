@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasaInteligente
 {
+    // Clase POCO que a la que se transformara el JSON
     public class Datos
     {
         public string humedadPatio { get; set; }

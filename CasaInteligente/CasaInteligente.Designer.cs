@@ -743,7 +743,6 @@
             this.Name = "CasaInteligente";
             this.Text = "Casa Inteligente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CasaInteligente_FormClosing_1);
-            this.Load += new System.EventHandler(this.CasaInteligente_Load);
             this.Calle.ResumeLayout(false);
             this.DSemaforo.ResumeLayout(false);
             this.DFondo.ResumeLayout(false);

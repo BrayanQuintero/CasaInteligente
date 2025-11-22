@@ -48,6 +48,7 @@ namespace CasaInteligente
                     // Filtrar líneas no JSON
                     if (!linea.StartsWith("{")) continue;
 
+                    // Convertir el JSON mandado desde arduino a la clase Datos
                     var datos = JsonSerializer.Deserialize<Datos>(linea);
                     DatosRecibidos?.Invoke(datos); // Notificar al formulario
 

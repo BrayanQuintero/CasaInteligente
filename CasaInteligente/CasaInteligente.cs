@@ -24,12 +24,16 @@ namespace CasaInteligente
         public CasaInteligente()
         {
             InitializeComponent();
-            arduino = new Arduino("COM20");
+
+            // Seleccionar el puerto al conectar otro arduino u otro puerto
+            arduino = new Arduino("COM4");
             arduino.DatosRecibidos += ActualizarUI;
             arduino.Abrir();
-            timer.Interval = 1000; // 1000 ms = 1 segundo (la actualización cada segundo)
-            timer.Tick += Timer_Tick; // Define el evento para el temporizador
-            timer.Start(); // Inicia el temporizador
+
+            // Configuracion del reloj en pantalla
+            timer.Interval = 1000;
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void ActualizarUI(Datos datos)
@@ -41,6 +45,7 @@ namespace CasaInteligente
                 return;
             }
 
+            // Mostrar los datos en su etiqueta correspondiente
             lblHumedadPatio.Text = datos.humedadPatio;
             lblEstadoBomba.Text = datos.estadoBomba;
 
@@ -61,6 +66,7 @@ namespace CasaInteligente
             semaforo(datos);
         }
 
+        // Cambia el color de los paneles dependiendo el valor leido, simulando el semaforo
         public void semaforo(Datos datos) {
             IRojo.BackColor = "ON".Equals(datos.iRojo) ? rojoON : rojoOFF;
             IAmarillo.BackColor = datos.iAmarillo.Equals("ON") ? amarilloON : amarilloOFF;
@@ -80,11 +86,6 @@ namespace CasaInteligente
         {
             // Muestra la hora actual en el label
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss"); // 24 horas con minutos y segundos
-        }
-
-        private void CasaInteligente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
